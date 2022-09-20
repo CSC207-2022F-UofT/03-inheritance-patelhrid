@@ -5,6 +5,8 @@
  * 1. Introduction to Java helpful.
  */
 
+import static java.lang.System.arraycopy;
+
 public abstract class Bag {
     /*
      * TODO: Create the following private instance variables
@@ -100,10 +102,11 @@ public abstract class Bag {
      */
     public String popItem(){
         String item = null;
-        for (int i = this.capacity; i >= 0; i--) {
+        for (int i = this.capacity - 1; i >= 0; i--) {
             if (this.contents[i] != null) {
                 item = this.contents[i];
                 this.contents[i] = null;
+                this.numberOfContents = this.numberOfContents - 1;
             }
         }
         return item;
@@ -120,7 +123,7 @@ public abstract class Bag {
         String[] oldContents = this.contents;
         this.contents = new String[this.capacity + n];
         this.capacity = this.capacity + n;
-        System.arraycopy(oldContents, 0, this.contents, 0, oldContents.length);
+        arraycopy(oldContents, 0, this.contents, 0, oldContents.length);
     }
 
     /**

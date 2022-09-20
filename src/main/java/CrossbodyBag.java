@@ -57,9 +57,11 @@
      */
     @Override
     public String toString() {
-        String crossBody = "Crossbody Bag with " + this.numberOfStraps + " straps";
-        return this.color + crossBody + " (" + this.numberOfContents + " / " +
+//        String crossBody = "Crossbody Bag with " + this.numberOfStraps + " straps";
+//        System.out.printf(crossBody);
+//        return this.color + crossBody + " (" + this.numberOfContents + " / " +
+//                this.capacity + ")";
+        return this.color + " Crossbody Bag with " + numberOfStraps + " straps (" + this.numberOfContents + " / " +
                 this.capacity + ")";
-//        return "Crossbody Bag with " + numberOfStraps + " straps";
     }
 }
