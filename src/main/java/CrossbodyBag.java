@@ -30,3 +30,36 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+    public class CrossbodyBag extends Bag{
+    /**
+     * A class representing a CrossbodyBag as defined above.
+     */
+    int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int straps){
+        super(color, capacity);
+        this.numberOfStraps = straps;
+    }
+
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    public int getNumberOfStraps(){
+        return this.numberOfStraps;
+    }
+
+    /**
+     * Return the details of this Bag.
+     * This method requires you to have created the private
+     * instance variables mentioned above.
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        String crossBody = "Crossbody Bag with " + this.numberOfStraps + " straps";
+        return this.color + crossBody + " (" + this.numberOfContents + " / " +
+                this.capacity + ")";
+//        return "Crossbody Bag with " + numberOfStraps + " straps";
+    }
+}
